@@ -12,6 +12,7 @@ Installation/Usage
 
 ###Roadmap
 
-* Test all browsers.
+* Refactor JS from original 1k ugliness.
+* Test/verify all browsers.
 * Add menu to select different resolutions.
 * Detect CSS3 @media queries.
