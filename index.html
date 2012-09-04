@@ -21,27 +21,29 @@
     <h2>TEST <strong>MOBILE</strong> WEB SITES FROM <strong>ANY BROWSER</strong></h2>
     <p>A BOOKMARKLET IN UNDER 1K</p>
 
-    <a href="javascript:
-      w = 320;
-      bod = document.documentElement;
-      doc = document.body.childNodes;
-      btn = document.createElement('a');
+    <a href="javascript:(
+        function() {
+          w = 320;
+          bod = document.documentElement;
+          doc = document.body.childNodes;
+          btn = document.createElement('a');
 
-      bod.appendChild(btn);
-      btn.innerHTML = 'rotate';
-      btn.style.position = 'absolute';
-      btn.style.top = 10+'px';
-      btn.style.left = 10+'px';
-      btn.addEventListener('click', r, false);
+          bod.appendChild(btn);
+          btn.innerHTML = 'rotate';
+          btn.style.position = 'absolute';
+          btn.style.top = 10+'px';
+          btn.style.left = 10+'px';
+          btn.addEventListener('click', r, false);
 
-      function r() {
-        w = (w == 320) ? 480 : 320;
-        bod.style.width = w + 'px';
-      }
+          function r() {
+            w = (w == 320) ? 480 : 320;
+            bod.style.width = w + 'px';
+          }
 
-      bod.style.width = w + 'px';
-      bod.style.margin = '0 auto';
-
+          bod.style.width = w + 'px';
+          bod.style.margin = '0 auto';
+        }
+      )();
       ">
       Smallfari Bookmarklet</a>
   </body>
