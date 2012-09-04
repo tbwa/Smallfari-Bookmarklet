@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+  <title>Smallfari</title>
+  <style>
+    * { margin: 0; padding: 0; font-size: 100%; font-family: Futura, Helvetica, Arial, sans-serif;  }
+    body { margin: 0 25px; text-align: center; text-transform: lowercase; background: hsl(60,30%,80%); color: hsl(200 ,50%,50%);  }
+    h1 { width: 500px; margin: 15px auto; padding: 0 0 10px 0; font-size: 62px; font-weight: normal; border-bottom: solid 1px hsla(10,60%,50%,.4); letter-spacing: -.05em; }
+    h2 { font-size: 31px; letter-spacing: -.05em; }
+    h2 strong { font-style: italic; color: hsl(10,60%,50%); }
+    p { margin: 15px 0; font-size: 31px;  font-weight: bold; text-decoration: italic; letter-spacing: -.05em; }
+    a { display: block; margin: 25px auto; padding: 15px; width: 250px; background: hsl(10,60%,50%); color: hsl(60,30%,80%); text-decoration: none; 
+      -webkit-transition: all .5s ease-out;
+    }
+    a:hover { background: hsl(200 ,50%,50%); }
+  </style>
+</head>
+<html>
+  <body>
+
+    <h1>SMALLFARI</h1>
+    <h2>TEST <strong>MOBILE</strong> WEB SITES FROM <strong>ANY BROWSER</strong></h2>
+    <p>A BOOKMARKLET IN UNDER 1K</p>
+
+    <a href="javascript:(
+        function() {
+          w = 320;
+          bod = document.documentElement;
+          doc = document.body.childNodes;
+          btn = document.createElement('a');
+
+          bod.appendChild(btn);
+          btn.innerHTML = 'rotate';
+          btn.style.position = 'absolute';
+          btn.style.top = 10+'px';
+          btn.style.left = 10+'px';
+          btn.addEventListener('click', r, false);
+
+          function r() {
+            w = (w == 320) ? 480 : 320;
+            bod.style.width = w + 'px';
+          }
+
+          bod.style.width = w + 'px';
+          bod.style.margin = '0 auto';
+        }
+      )();
+      ">
+      Smallfari Bookmarklet</a>
+  </body>
+</html>
