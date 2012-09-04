@@ -10,6 +10,8 @@ Installation/Usage
 2. Drag the "smallfari bookmarklet" link to the bookmarks bar.
 3. Click the bookmarklet to make any page render at 320px wide.
 
+Note: Only works on fluid width layouts.
+
 ###Roadmap
 
 * Refactor JS from original 1k ugliness.
