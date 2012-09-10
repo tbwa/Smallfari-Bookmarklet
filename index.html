@@ -3,51 +3,62 @@
   <title>Smallfari</title>
   <style>
     * { margin: 0; padding: 0; font-size: 100%; font-family: Futura, Helvetica, Arial, sans-serif;  }
-    body { margin: 0 25px; text-align: center; text-transform: lowercase; background: hsl(60,30%,80%); color: hsl(200 ,50%,50%);  }
-    h1 { margin: 15px auto; padding: 0 0 10px 0; font-size: 62px; font-weight: normal; letter-spacing: -.05em; }
-    h2 { font-size: 31px; letter-spacing: -.05em; }
+    .content { position: relative; z-index: 2; }
+    body { margin: 0 25px; text-align: center; text-transform: lowercase; color: white; background: #222; }
+    h1 { margin: 160px auto 0 auto; font-size: 62px; line-height: 67px; font-weight: normal; text-transform: uppercase; letter-spacing: 6px; }
+    h2 { font-size: 23px; letter-spacing: -.05em; }
     h2 strong { font-style: italic; color: hsl(10,60%,50%); }
-    p { margin: 5px 0 15px 0; font-size: 31px;  font-weight: bold; text-decoration: italic; letter-spacing: -.05em; }
-    a { display: block; margin: 25px auto; padding: 15px; width: 250px; background: hsl(10,60%,50%); color: hsl(60,30%,80%); text-decoration: none; 
+    .link_wrap { width: 400px; margin: 30px auto; padding: 10px; border: dashed 5px black; }
+    p { margin: 0 0 15px 0; font-size: 46px;  font-weight: bold; text-decoration: italic; letter-spacing: 9px; }
+    a { display: block; margin:0 auto 25px auto; padding: 15px; width: 250px; background: hsl(10,60%,50%); color: hsl(60,30%,80%); text-decoration: none; 
       -webkit-transition: all .5s ease-out;
     }
     a:hover { background: hsl(200 ,50%,50%); }
+    img.bg { position: absolute; top: 0; left: 0; width: 100%; z-index: 1; }
+    .attr { position: absolute; bottom: 10px; right: 10px; font-size: 12px; z-index: 2; }
+    .attr a { display: inline; background: none; padding: 0; }
   </style>
 </head>
 <html>
   <body>
 
-    <h1>Smallfari</h1>
-    <h2>Test <strong>mobile</strong> web sites in <strong>any browser</strong></h2>
-    <p>A bookmarklet</p>
+    <div class="content">
+      <h1>Smallfari</h1>
+      <p>bookmarklet</p>
+      <h2>Test <strong>mobile</strong> web sites in <strong>desktop browsers</strong></h2>
+      
+      <div class="link_wrap">
+        <a href="javascript:(
+            function() {
+              var width = 320;
+              var body  = document.documentElement;
+              var doc   = document.body.childNodes;
+              var btn   = document.createElement('a');
 
-    <a href="javascript:(
-        function() {
-          var width = 320;
-          var body  = document.documentElement;
-          var doc   = document.body.childNodes;
-          var btn   = document.createElement('a');
+              body.appendChild(btn);
+              btn.innerHTML = 'rotate';
+              btn.style.position = 'fixed';
+              btn.style.top = 10+'px';
+              btn.style.left = 10+'px';
+              
+              btn.addEventListener('click', rotate, false);
 
-          body.appendChild(btn);
-          btn.innerHTML = 'rotate';
-          btn.style.position = 'fixed';
-          btn.style.top = 10+'px';
-          btn.style.left = 10+'px';
-          
-          btn.addEventListener('click', rotate, false);
+              function rotate() {
+                width = (width == 320) ? 480 : 320;
+                body.style.width = width + 'px';
+              }
 
-          function rotate() {
-            width = (width == 320) ? 480 : 320;
-            body.style.width = width + 'px';
-          }
+              body.style.width = width + 'px';
+              body.style.margin = '0 auto';
+            }
+          )();
+          ">
+          Smallfari Bookmarklet</a>
 
-          body.style.width = width + 'px';
-          body.style.margin = '0 auto';
-        }
-      )();
-      ">
-      Smallfari Bookmarklet</a>
-
-      <em>Drag the link to your bookmarks bar.</em>
+          <em>Drag the link to your bookmarks bar.</em>
+        </div>
+      </div>
+      <em class="attr">Photo By <a href="http://www.flickr.com/photos/vinothchandar/7696925948/">vinothchandar</a></em>
+      <img class="bg" src="img/jungle.jpg" />
   </body>
 </html>
